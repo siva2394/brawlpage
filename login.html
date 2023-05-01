@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login/Register</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="supercell.jpeg" type="image/x-icon">
+    <script src="https://kit.fontawesome.com/d0a311dbb6.js" crossorigin="anonymous"></script>
+    <style>
+    body{
+        background-image: url("https://drive.google.com/uc?id=1DAsu98HL1CEyPnRb1hmLRpuhEgiefe0S");
+        background-repeat: no-repeat;
+        background-size: cover;
+
+    }
+
+    .container{
+        width: 100%;
+        height: 100vh;
+        background-image: url(login\ page.jpg);
+        background-position: center;
+        background-size: cover;
+        position: relative;
+    }
+    .form-box{
+    width: 90%;
+    max-width: 450px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background: #1d90dd6e;
+    padding: 50px 60px 70px;
+    text-align: center;
+    border-radius: 100px;
+}
+
+.form-box h1{
+    font-size: 30px;
+    margin-bottom: 60px;
+    color: #000;
+    position: relative;
+
+}
+
+.form-box h1::after{
+    content: '';
+    width: 70px;
+    height: 4.5px;
+    border-radius: 3px;
+    background: rgba(0, 0, 0);
+    position: absolute;
+    bottom: -12px;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+.input-field{
+    background: #eaeaea;
+    margin: 15px 0;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    max-height: 65px;
+    transition: max-height 0.5s;
+    overflow: hidden;
+}
+
+form-1 input{
+    width: 100%;
+    background: transparent;
+    border: 0;
+    outline: 0;
+    padding: 18px 15px;
+}
+
+.input-field i{
+    margin-left: 15px;
+    color: #999;
+}
+
+form-1 p{
+    text-align: left;
+    font-size: 13px;
+}
+
+form-1 p a{
+    text-decoration: none;
+    color: #f00;
+
+}
+
+.btn-field{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.btn-field button{
+    flex-basis: 48%;
+    background: rgb(255, 238, 0);
+    color: #000;
+    height: 40px;
+    border-radius: 20px;
+    border: 0;
+    outline: 0;
+    cursor: pointer;
+    transition: background 1s;
+
+}
+
+.input-group{
+    height: 280px;
+}
+
+.btn-field button.disable{
+    background: #eaeaea;
+    color: #555;
+}
+    </style>
+</head>
+<body>
+    <div class="nav-container">
+        <nav>
+            <div class="logo">
+                <img src="https://drive.google.com/uc?id=10yBG4pl43RzddbVI75K0onu8rPLB1nVH" alt="this is an Picture">
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="gameplay.html">GAMEPLAY GALLERY</a></li>
+                <li><a href="apply.html">Apply</a></li>
+                <li><a href="about us.html">About Us</a></li>
+                <li><a href="login.html">LOGIN</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div class="container">
+        <div class="form-box">
+            <h1 id="title">Sign Up To<br/>SUPERCELL ID</h1>
+            <form-1>
+                <div class="input-group">
+                    <div class="input-field" id="nameField">
+                        <i class="fa-light fa-id-card"></i>
+                    <input type="text" placeholder="PlayerId">
+                    </div>
+
+                    <div class="input-field">
+                        <i class="fa-solid fa-envelope"></i>
+                        <input type="email" placeholder="Email">
+                    </div>
+
+                    <div class="input-field">
+                        <i class="fa-solid fa-lock"></i>
+                        <input type="password" placeholder="Password">
+                    </div>
+                    <p>Forgot Password?<a href="#">Click Here!</a></p>
+                    <p>ALready have an Account?<a href="#">Sign in</a></p>
+                </div>
+                <div class="btn-field">
+                    <button type="button" id="signupBtn">Sign Up</button>
+                    <button type="button" id="loginBtn" class="disable">Log In</button>
+                </div>
+            </form-1>
+        </div>
+    </div>
+    <script>
+
+        let signupBtn = document.getElementById("signupBtn");
+        let loginBtn = document.getElementById("loginBtn");
+        let nameField = document.getElementById("nameField");
+        let title = document.getElementById("title");
+        
+        loginBtn.onclick = function(){
+            nameField.style.maxHeight = "0";
+            title.innerHTML = "Log In";
+            signupBtn.classList.add("disable");
+            loginBtn.classList.remove("disable");
+        }
+        signupBtn.onclick = function(){
+            nameField.style.maxHeight = "60px";
+            title.innerHTML = "Sign Up";
+            signupBtn.classList.remove("disable");
+            loginBtn.classList.add("disable");
+        }
+        
+        
+        </script>    
+</body>
+</html>
